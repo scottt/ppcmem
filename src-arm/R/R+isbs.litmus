@@ -1,0 +1,15 @@
+ARM R+isbs
+"ISBdWW Wse ISBdWR Fre"
+Cycle=Fre ISBdWW Wse ISBdWR
+{
+%x0=x; %y0=y;
+%y1=y; %x1=x;
+}
+ P0            | P1            ;
+ MOV R0, #1    | MOV R0, #2    ;
+ STR R0, [%x0] | STR R0, [%y1] ;
+ ISB           | ISB           ;
+ MOV R1, #1    | LDR R1, [%x1] ;
+ STR R1, [%y0] |               ;
+exists
+(y=2 /\ 1:R1=0)

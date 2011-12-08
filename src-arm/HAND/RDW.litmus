@@ -1,0 +1,17 @@
+ARM RDW ()
+"RDW"
+{
+P1:R6=x; P1:R7=y; P1:R8=z;
+P0:R7=y; P0:R8=z;
+P2:R6=x;
+}
+P0           |P1             |P2           ;
+mov R1,1     |ldr R1,R7      |mov R1,1     ;
+str R1,R8    |and R9,R1,#0   |str R1,R6    ;
+dmb          |ldr R3,[R9,R6] |             ;
+mov R2,2     |ldr R4,R6      |             ;
+str R2,R7    |and R10,R4,#0  |             ;
+             |ldr R2,[R10,R8]|             ;
+
+locations [1:R1; 1:R2; 1:R3; 1:R4]
+~exists (P1:R1=2 /\ P1:R2=0 /\ P1:R3=0 /\ P1:R4=1)

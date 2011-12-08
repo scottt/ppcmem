@@ -1,0 +1,16 @@
+ARM 2+2W+dmbs+reads ()
+"2+2W+dmbs+reads"
+{
+P0:R5=x ; P0:R6=y ; P0:R1=1 ;P0:R2=2;
+P1:R5=x ; P1:R6=y ; P1:R1=1 ;P1:R2=2;
+P2:R5=x ;
+P3:R6=y ;
+
+}
+P0        |P1        |P2        |P3           ;
+str R2,R5 |str R2,R6 |ldr R1,R5 |ldr R1,R6 ;
+dmb       |dmb       |          |             ;
+str R1,R6 |str R1,R5 |ldr R2,R5 |ldr R2,R6 ;
+locations [x; y; P2:R1; P2:R2; P3:R1; P3:R2]
+~exists (P2:R1=1 /\ P2:R2=2 /\ P3:R1=1 /\ P3:R2=2)
+

@@ -1,0 +1,14 @@
+ARM S+po+addr
+"PodWW Rfe DpAddrdW Wse"
+Cycle=Rfe DpAddrdW Wse PodWW
+{
+%x0=x; %y0=y;
+%y1=y; %x1=x;
+}
+ P0            | P1               ;
+ MOV R0, #2    | LDR R0, [%y1]    ;
+ STR R0, [%x0] | EOR R1,R0,R0     ;
+ MOV R1, #1    | MOV R2, #1       ;
+ STR R1, [%y0] | STR R2, [R1,%x1] ;
+exists
+(x=2 /\ 1:R0=1)

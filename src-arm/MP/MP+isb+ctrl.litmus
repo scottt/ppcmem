@@ -1,0 +1,15 @@
+ARM MP+isb+ctrl
+"ISBdWW Rfe DpCtrldR Fre"
+Cycle=Rfe DpCtrldR Fre ISBdWW
+{
+%x0=x; %y0=y;
+%y1=y; %x1=x;
+}
+ P0            | P1            ;
+ MOV R0, #1    | LDR R0, [%y1] ;
+ STR R0, [%x0] | CMP R0, R0    ;
+ ISB           | BNE LC00      ;
+ MOV R1, #1    | LC00:         ;
+ STR R1, [%y0] | LDR R1, [%x1] ;
+exists
+(1:R0=1 /\ 1:R1=0)

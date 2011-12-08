@@ -1,0 +1,13 @@
+ARM LB+rs () "LB+rs Register shadowing illustration"
+{
+ P0:R4=x; P1:R4=x; P0:R5=y; P1:R5=y;
+ [x] = 0; [y] = 0;
+}
+   P0          |     P1            ;
+ldr R1, R4     | ldr  R3, R5  ;
+mov  R2, R1    | add R3, R3, 1  ;
+mov  R1, 1     | str  R3, R4  ;
+str R1, R5     |                   ;
+
+exists (P0:R1=1 /\ P0:R2=2 /\ P1:R3= 2 /\ [y]=1 /\ [x]=2)
+

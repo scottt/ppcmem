@@ -1,0 +1,17 @@
+ARM ISA2+dmb+ctrl+ctrl
+"DMBdWW Rfe DpCtrldW Rfe DpCtrldR Fre"
+Cycle=Rfe DpCtrldW Rfe DpCtrldR Fre DMBdWW
+{
+%x0=x; %y0=y;
+%y1=y; %z1=z;
+%z2=z; %x2=x;
+}
+ P0            | P1            | P2            ;
+ MOV R0, #1    | LDR R0, [%y1] | LDR R0, [%z2] ;
+ STR R0, [%x0] | CMP R0, R0    | CMP R0, R0    ;
+ DMB           | BNE LC00      | BNE LC01      ;
+ MOV R1, #1    | LC00:         | LC01:         ;
+ STR R1, [%y0] | MOV R1, #1    | LDR R1, [%x2] ;
+               | STR R1, [%z1] |               ;
+exists
+(1:R0=1 /\ 2:R0=1 /\ 2:R1=0)

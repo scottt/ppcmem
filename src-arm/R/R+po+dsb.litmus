@@ -1,0 +1,14 @@
+ARM R+po+dsb
+"PodWW Wse DSBdWR Fre"
+Cycle=Fre PodWW Wse DSBdWR
+{
+%x0=x; %y0=y;
+%y1=y; %x1=x;
+}
+ P0            | P1            ;
+ MOV R0, #1    | MOV R0, #2    ;
+ STR R0, [%x0] | STR R0, [%y1] ;
+ MOV R1, #1    | DSB           ;
+ STR R1, [%y0] | LDR R1, [%x1] ;
+exists
+(y=2 /\ 1:R1=0)

@@ -1,0 +1,19 @@
+ARM PPO012
+"DMBdWW Rfe DpAddrdR PosRR DpCtrlIsbdR Fre"
+Cycle=Rfe DpAddrdR PosRR DpCtrlIsbdR Fre DMBdWW
+{
+%x0=x; %y0=y;
+%y1=y; %z1=z; %x1=x;
+}
+ P0            | P1               ;
+ MOV R0, #1    | LDR R0, [%y1]    ;
+ STR R0, [%x0] | EOR R1,R0,R0     ;
+ DMB           | LDR R2, [R1,%z1] ;
+ MOV R1, #1    | LDR R3, [%z1]    ;
+ STR R1, [%y0] | CMP R3, R3       ;
+               | BNE LC00         ;
+               | LC00:            ;
+               | ISB              ;
+               | LDR R4, [%x1]    ;
+exists
+(1:R0=1 /\ 1:R4=0)

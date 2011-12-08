@@ -1,0 +1,16 @@
+ARM MP+nondep+dmb ()
+{
+ P0:R1=y; P0:R2=1;
+ P0:R5=x; P1:R5=x;
+ P0:R6=0; P1:R6=y;
+ x = z; y = 0; z=0 ; (* z is address 0, for nicer output in litmus *)
+}
+
+    P0     |      P1       ;
+           |               ;
+str R1,R5  | ldr R3,R6 ;
+ldr R6,R5  | dmb       ;
+str R2,R6  | ldr R4,R5 ;
+
+exists (P1:R3 = 1 /\ P1:R4=z /\ P0:R6=y);
+

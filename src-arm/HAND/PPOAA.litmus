@@ -1,0 +1,16 @@
+ARM PPOAA ()
+"Dependance chain, through memory"
+{
+P1:R7=y; P1:R8=z; P1:R9=x;
+P0:R7=y; P0:R8=z;
+}
+P0           |P1              ;
+mov R1,#1    |ldr R1,R7       ;
+str R1,R8    |and R11,R1,#0   ;
+dmb          |mov R3,#1       ;
+mov R2,#1    |str R3,[R11,R9] ;
+str R2,R7    |ldr R2,R9       ;
+             |and R10,R2,#0   ;
+             |ldr R4,[R10,R8] ;
+locations [P1:R1; P1:R4;]
+~exists (P1:R1=1  /\ P1:R4=0)

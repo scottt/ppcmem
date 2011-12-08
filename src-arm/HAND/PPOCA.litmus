@@ -1,0 +1,18 @@
+ARM PPOCA ()
+"local W can be speculated!"
+{
+P1:R7=y; P1:R8=z; P1:R9=x;
+P0:R7=y; P0:R8=z;
+}
+P0           |P1              ;
+mov R1,#1    |ldr R1,R7       ;
+str R1,R8    |cmp R1,#0       ;
+dmb          |beq L00         ;
+mov R2,#1    |L00:            ;
+str R2,R7    |mov R3,#1       ;
+             |str R3,R9       ;
+             |ldr R2,R9       ;
+             |and R10,R2,#0   ;
+             |ldr R4,[R10,R8] ;
+locations [P1:R1; P1:R4;]
+exists (P1:R1=1  /\ P1:R4=0)

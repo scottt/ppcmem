@@ -1,0 +1,16 @@
+ARM RSW ()
+"is RR to same location in ppo?"
+{
+P1:R6=x; P1:R7=y; P1:R8=z;
+P0:R7=y; P0:R8=z;
+}
+P0           |P1             ;
+mov R1,1     |ldr R1,R7      ;
+str R1,R8    |and R9,R1,#0   ;
+dmb          |ldr R3,[R9,R6] ;
+mov R2,2     |ldr R4,R6      ;
+str R2,R7    |and R10,R4,#0  ;
+             |ldr R2,[R10,R8];
+
+locations [P1:R1; P1:R2;]
+exists (P1:R1=2 /\ P1:R2=0)

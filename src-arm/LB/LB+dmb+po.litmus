@@ -1,0 +1,14 @@
+ARM LB+dmb+po
+"DMBdRW Rfe PodRW Rfe"
+Cycle=Rfe PodRW Rfe DMBdRW
+{
+%x0=x; %y0=y;
+%y1=y; %x1=x;
+}
+ P0            | P1            ;
+ LDR R0, [%x0] | LDR R0, [%y1] ;
+ DMB           | MOV R1, #1    ;
+ MOV R1, #1    | STR R1, [%x1] ;
+ STR R1, [%y0] |               ;
+exists
+(0:R0=1 /\ 1:R0=1)

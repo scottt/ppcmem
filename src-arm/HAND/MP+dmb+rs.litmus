@@ -1,0 +1,14 @@
+ARM MP+dmb+rs
+"register shadowing that works"
+{
+%x0=x; %y0=y;
+%y1=y; %x1=x;
+}
+ P0            | P1            ;
+ MOV R0, #1    | LDR R1, [%y1] ;
+ STR R0, [%x0] | MOV R0,R1     ;
+ DMB           | LDR R1, [%x1] ;
+ MOV R1, #1    |               ;
+ STR R1, [%y0] |               ;
+exists
+(1:R0=1 /\ 1:R1=0)
