@@ -19,15 +19,23 @@ MODEL = src_model/
 
 # js_of_ocaml directories
 
-JSHOME    = js_of_ocaml
-JSLIBDIR  = $(JSHOME)/lib
-JSCOMP    = $(JSHOME)/compiler/js_of_ocaml
-JSLIBNAME = $(JSLIBDIR)/js_of_ocaml.cma
-JSRUNTIME = $(JSHOME)/runtime/runtime.js
+ifeq ($(JSLIBDIR), "")
+  JSHOME = js_of_ocaml
+  JSLIBDIR  = $(JSHOME)/lib
+  JSCOMP    = $(JSHOME)/compiler/js_of_ocaml
+  JSLIBNAME = $(JSLIBDIR)/js_of_ocaml.cma
+  JSRUNTIME = $(JSHOME)/runtime/runtime.js
+  PA_JS_CMO = $(JSLIBDIR)/syntax/pa_js.cmo
+else
+  JSCOMP    = $(JSBINDIR)/js_of_ocaml
+  JSLIBNAME = $(JSLIBDIR)/js_of_ocaml.cma
+  JSRUNTIME = $(JSLIBDIR)/runtime.js
+  PA_JS_CMO = $(JSLIBDIR)/pa_js.cmo
+endif
 
 # preprocessor for the js version
 
-PP = "camlp4o js_of_ocaml/lib/syntax/pa_js.cmo"
+PP = "camlp4o $(PA_JS_CMO)"
 
 # OCAML for js
 
@@ -219,6 +227,9 @@ model:
 
 INSTALLDIR=~/public_html/ppcmem
 INSTALLFILES=browse.css handler.js index.html stylesheet.css system.js url.js close.png jquery-1.6.1.js arrow-left.png arrow-right.png help.html ppc.css
+
+jquery-1.6.1.js:
+	wget -O $@ http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js
 
 install:
 	make text
