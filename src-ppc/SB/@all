@@ -1,0 +1,12 @@
+# diycross -name SB allWR Fre allWR Fre -vars
+# Revision: 6290:6335
+SB.litmus
+SB+isync+po.litmus
+SB+sync+po.litmus
+SB+lwsync+po.litmus
+SB+isyncs.litmus
+SB+sync+isync.litmus
+SB+lwsync+isync.litmus
+SB+syncs.litmus
+SB+lwsync+sync.litmus
+SB+lwsyncs.litmus

@@ -1,0 +1,17 @@
+PPC RDW (PPCPPOThree)
+"is RR to same location in ppo?, intervening write variation"
+{
+1:r6=x; 1:r7=y; 1:r8=z;
+0:r7=y; 0:r8=z;
+2:r6=x;
+}
+P0           |P1            |P2           ;
+li r1,1      |lwz r1,0(r7)  |li r1,1      ;
+stw r1,0(r8) |xor r9,r1,r1  |stw r1,0(r6) ;
+sync         |lwzx r3,r9,r6 |             ;
+li r2,2      |lwz r4,0(r6)  |             ;
+stw r2,0(r7) |xor r10,r4,r4 |             ;
+             |lwzx r2,r10,r8|             ;
+
+locations [1:r1; 1:r2; 1:r3; 1:r4]
+~exists (1:r1=2 /\ 1:r2=0 /\ 1:r3=0 /\ 1:r4=1)

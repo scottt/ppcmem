@@ -1,0 +1,30 @@
+PPC IRIW+addrs-twice
+"IRIW+addrs-twice"
+{
+0:r2=x;
+1:r2=x; 1:r5=y;
+2:r2=y;
+3:r2=y; 3:r5=x;
+0:r6=z;
+1:r6=w;
+2:r6=z; 2:r7=w;
+3:r6=w; 3:r7=z;
+0:r11=d0;
+2:r11=d2;
+}
+ P0           | P1            | P2             | P3            ;
+ li r1,1      | lwz r1,0(r2)  | li r1,1        | lwz r1,0(r2)  ;
+ stw r1,0(r2) | xor r3,r1,r1  | stw r1,0(r2)   | xor r3,r1,r1  ;
+              | lwzx r4,r3,r5 |                | lwzx r4,r3,r5 ;
+              |               |                |               ;
+              |               |                |               ;
+ stw r1,0(r11)|               | stw r1,0(r11)  |               ;
+              |               |                |               ;
+              |               |                |               ;
+ li r2,1      | li r7,1       | lwz r8,0(r6)   | lwz r8,0(r6)  ;
+ stw r2,0(r6) | stw r7,0(r6)  | xor r9,r8,r8   | xor r9,r8,r8  ;
+              |               | lwzx r10,r9,r7 | lwzx r10,r9,r7 ;
+                                               
+
+exists
+(1:r1=1 /\ 1:r4=0 /\ 3:r1=1 /\ 3:r4=0 /\ 2:r8=1 /\ 2:r10=0 /\ 3:r8=1 /\ 3:r10=0)

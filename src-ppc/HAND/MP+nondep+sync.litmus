@@ -1,0 +1,29 @@
+PPC MP+nondep+sync (PPCAdirOneThree)
+(* Was ppc-adir1v3 and I changed condition by hand *)
+{
+ P0:r1=y; P0:r2=1;
+ P0:r5=x; P1:r5=x;
+ P0:r6=0; P1:r6=y;
+ x = z; y = 0; z=0 ; (* z is address 0, for nicer output in litmus *)
+}
+
+    P0       |      P1     ;
+             |             ;
+std r1,0,r5  | lwz r3,0,r6 ;
+ld  r6,0,r5  | sync        ;
+stw r2,0,r6  | ld  r4,0,r5 ;
+
+(* Interesting, Adir et al claims this is allowed, but 
+   my reading is that to be allowed, it requires "non-cumulative"
+   barriers *)
+exists (P1:r3 = 1 /\ P1:r4=z);
+<<
+show 0
+genprog generated/ppc-adir1v3-prog.tex
+essdump generated/ppc-adir1v3-ess.dot
+>>
+<<
+show 0 of ess 0
+show interesting true
+readfrom generated/ppc-adir1v3-rf.dot
+>>

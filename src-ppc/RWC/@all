@@ -1,0 +1,30 @@
+# diycross -name RWC Rfe allRR Fre allWR Fre -vars
+# Revision: 6290:6335
+RWC.litmus
+RWC+addr+po.litmus
+RWC+ctrl+po.litmus
+RWC+ctrlisync+po.litmus
+RWC+isync+po.litmus
+RWC+sync+po.litmus
+RWC+lwsync+po.litmus
+RWC+po+isync.litmus
+RWC+addr+isync.litmus
+RWC+ctrl+isync.litmus
+RWC+ctrlisync+isync.litmus
+RWC+isyncs.litmus
+RWC+sync+isync.litmus
+RWC+lwsync+isync.litmus
+RWC+po+sync.litmus
+RWC+addr+sync.litmus
+RWC+ctrl+sync.litmus
+RWC+ctrlisync+sync.litmus
+RWC+isync+sync.litmus
+RWC+syncs.litmus
+RWC+lwsync+sync.litmus
+RWC+po+lwsync.litmus
+RWC+addr+lwsync.litmus
+RWC+ctrl+lwsync.litmus
+RWC+ctrlisync+lwsync.litmus
+RWC+isync+lwsync.litmus
+RWC+sync+lwsync.litmus
+RWC+lwsyncs.litmus

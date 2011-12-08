@@ -1,0 +1,13 @@
+# diycross -noeieio -o 3.SB -name 3.SB PodWR,LwSyncdWR,SyncdWR Fre PodWR,LwSyncdWR,SyncdWR Fre PodWR,LwSyncdWR,SyncdWR Fre
+# Version 4.00+1, Revision: 8211
+3.SB.litmus
+3.SB+lwsync+po+po.litmus
+3.SB+sync+po+po.litmus
+3.SB+lwsync+lwsync+po.litmus
+3.SB+sync+lwsync+po.litmus
+3.SB+lwsync+sync+po.litmus
+3.SB+sync+sync+po.litmus
+3.SB+lwsyncs.litmus
+3.SB+sync+lwsync+lwsync.litmus
+3.SB+sync+sync+lwsync.litmus
+3.SB+syncs.litmus

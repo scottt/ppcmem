@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+<link href="browse.css" rel="stylesheet" type="text/css" />
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="jquery-1.6.1.js"></script>
+    <script type="text/javascript" src="handler.js"></script>
+    <script type="text/javascript" src="system.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="url.js"></script>
+	
+    <div id="main_container">  
+    	<div id="top_div">  
+
+        <div id="slider">    
+			<div id='left'></div>
+			<div class="scroll" style="overflow: hidden;">
+				<div class="scrollContainer" style="width: 500px;">
+					<div id="ppc_title" class="panel name" style="top: 0px;left: 0px; float: left; position: relative;"><p class='title'>POWER Memory Model</p></div>
+					<div id="arm_title" class="panel name" style="top: 0px;left: 0px; float: left; position: relative;"><p class='title'>ARM Memory Model</p></div>
+				</div>
+			</div>
+			<div id='right'></div>
+				<div id='cover'>
+				<div id='click' >Switch Model</div>
+				</div>
+
+		</div>
+
+		</div>
+
+	<div class="browse" id = "_arm_">
+		<div class='category_wrapper'>
+		<div class='category'>
+        <ul>
+	    <li class="test_category">HAND : Hand-written tests</li>
+		<li class="test_category">MP: Message Passing</li>
+		<li class="test_category">SB: Store Buffer forwarding</li>
+		<li class="test_category">LB: Load Buffering</li>
+	    <li class="test_category">IRIW: Independent Reads of Independent Writes</li>
+		<li class="test_category">WRC: Write to Read Causality</li>
+	    <li class="test_category">RWC: Read to Write Causality</li>
+	    <li class="test_category">ISA2: B cumulativity</li>
+	    <li class="test_category">R : </li>
+	    <li class="test_category">S : </li>
+	    <li class="test_category">WWC :</li>
+	    <li class="test_category">WRW+2W :</li>
+	    <li class="test_category">PPO : Preserved Program Order</li>
+        </ul>
+		</div>
+		</div>
+        <div class='contents'>
+			<img class='close'  src='close.png'/>
+            <h4> </h4>
+			<div style = "float:left;width:200px"></div>
+			<div style = "float:right;width:200px"></div>
+			<div style = "text-align:center"></div>
+		</div>
+	</div>
+
+	<div class="browse" id = "_ppc_">
+		<div class='category_wrapper'>
+		<div class='category'>
+		<ul>
+		<li class="test_category">HAND : Hand-written tests </li>
+		<li class="test_category">MP: Message Passing</li>
+		<li class="test_category">SB: Store buffer forwarding</li>
+		<li class="test_category">LB: Load Buffering</li>
+		<li class="test_category">IRIW: Independent Reads of Independent Writes</li>
+		<li class="test_category">WRC: Write to Read Causality</li>
+		<li class="test_category">RWC: Read to Write Causality</li>
+		<li class="test_category">ISA2 : B cumulativity</li>
+		<li class="test_category">R : </li>
+		<li class="test_category">S : </li>
+		<li class="test_category">2+2W : </li>
+		<li class="test_category">WWC : </li>
+		<li class="test_category">WRW+2W : </li>
+		<li class="test_category">WRW+WR : </li>
+		<li class="test_category">WRR+2W : </li>
+		<li class="test_category">PPO : Preserved Program Order</li>
+		<li class="test_category">3.SB:</li>
+		<li class="test_category">3.LB:</li>
+		<li class="test_category">3.2W:</li>
+		<li class="test_category">Z6.0:</li>
+		<li class="test_category">Z6.1:</li>
+		<li class="test_category">Z6.2:</li>
+		<li class="test_category">Z6.3:</li>
+		<li class="test_category">Z6.4:</li>
+		<li class="test_category">Z6.5:</li>
+		<li class="test_category">W+RWC:</li>
+		<li class="test_category">IRWIW:</li>
+		<li class="test_category">IRRWIW:</li>
+		</ul>
+		</div>
+		</div>
+        <div class='contents'>
+			<img class='close'  src='close.png'/>
+            <h4> </h4>
+			<div style = "float:left;width:200px"></div>
+			<div style = "float:right;width:200px"></div>
+			<div style = "text-align:center"></div>
+		</div> 
+	</div>	
+	<div id="main">
+	<div id="mask"></div>
+
+	</div>
+	<div id="bot_div">
+
+	</div>
+	</div>
+  </body>
+</html>

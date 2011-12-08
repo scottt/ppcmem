@@ -1,0 +1,15 @@
+PPC propagate-sync-coherence
+"propagate-sync-coherence"
+{
+0:r2=x;
+1:r2=x; 1:r4=y;
+2:r2=x;
+3:r2=y; 3:r5=x;
+}
+ P0           | P1           | P2           | P3            ;
+ li r1,1      | lwz r1,0(r2) | li r1,2      | lwz r1,0(r5)  ;
+ stw r1,0(r2) | sync         | stw r1,0(r2) | xor r3,r1,r1  ;
+              | li r5,1      |              | lwzx r4,r3,r2 ;
+              | stw r5,0(r4) |              |               ;
+
+exists (1:r1=1 /\ 3:r1=2 /\ 3:r4=1 /\ x=2)

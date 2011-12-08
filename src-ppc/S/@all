@@ -1,0 +1,34 @@
+# diycross -noeieio -o S -name S allWW Rfe allRW Wse
+# Version 4.00+1, Revision: 8211
+S.litmus
+S+isync+po.litmus
+S+sync+po.litmus
+S+lwsync+po.litmus
+S+po+addr.litmus
+S+isync+addr.litmus
+S+sync+addr.litmus
+S+lwsync+addr.litmus
+S+po+data.litmus
+S+isync+data.litmus
+S+sync+data.litmus
+S+lwsync+data.litmus
+S+po+ctrl.litmus
+S+isync+ctrl.litmus
+S+sync+ctrl.litmus
+S+lwsync+ctrl.litmus
+S+po+ctrlisync.litmus
+S+isync+ctrlisync.litmus
+S+sync+ctrlisync.litmus
+S+lwsync+ctrlisync.litmus
+S+po+isync.litmus
+S+isyncs.litmus
+S+sync+isync.litmus
+S+lwsync+isync.litmus
+S+po+sync.litmus
+S+isync+sync.litmus
+S+syncs.litmus
+S+lwsync+sync.litmus
+S+po+lwsync.litmus
+S+isync+lwsync.litmus
+S+sync+lwsync.litmus
+S+lwsyncs.litmus

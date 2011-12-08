@@ -1,0 +1,19 @@
+# diycross Rfe PodRW,DpdW,LwSyncdRW,SyncdRW Rfe PodRW,DpdW,LwSyncdRW,SyncdRW Wse -name WWC
+# Version 4.00+1, Revision: 7126M
+WWC.litmus
+WWC+addr+po.litmus
+WWC+lwsync+po.litmus
+WWC+sync+po.litmus
+WWC+po+addr.litmus
+WWC+addrs.litmus
+#this one was written by hand before - now it's a symbolic link
+WWC+lwsync+addr.litmus
+WWC+sync+addr.litmus
+WWC+po+lwsync.litmus
+WWC+addr+lwsync.litmus
+WWC+lwsyncs.litmus
+WWC+sync+lwsync.litmus
+WWC+po+sync.litmus
+WWC+addr+sync.litmus
+WWC+lwsync+sync.litmus
+WWC+syncs.litmus

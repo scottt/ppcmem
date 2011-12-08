@@ -1,0 +1,29 @@
+# diycross -noeieio -o Z6.4 -name Z6.4 someWW Wse someWR Fre someWR Fre
+# Version 4.00+1, Revision: 8211M
+Z6.4.litmus
+Z6.4+sync+po+po.litmus
+Z6.4+lwsync+po+po.litmus
+Z6.4+po+sync+po.litmus
+Z6.4+sync+sync+po.litmus
+Z6.4+lwsync+sync+po.litmus
+Z6.4+po+lwsync+po.litmus
+Z6.4+sync+lwsync+po.litmus
+Z6.4+lwsync+lwsync+po.litmus
+Z6.4+po+po+sync.litmus
+Z6.4+sync+po+sync.litmus
+Z6.4+lwsync+po+sync.litmus
+Z6.4+po+sync+sync.litmus
+Z6.4+syncs.litmus
+Z6.4+lwsync+sync+sync.litmus
+Z6.4+po+lwsync+sync.litmus
+Z6.4+sync+lwsync+sync.litmus
+Z6.4+lwsync+lwsync+sync.litmus
+Z6.4+po+po+lwsync.litmus
+Z6.4+sync+po+lwsync.litmus
+Z6.4+lwsync+po+lwsync.litmus
+Z6.4+po+sync+lwsync.litmus
+Z6.4+sync+sync+lwsync.litmus
+Z6.4+lwsync+sync+lwsync.litmus
+Z6.4+po+lwsync+lwsync.litmus
+Z6.4+sync+lwsync+lwsync.litmus
+Z6.4+lwsyncs.litmus

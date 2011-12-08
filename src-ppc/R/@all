@@ -1,0 +1,18 @@
+# diycross -name R allWW Wse allWR Fre
+# Version 4.00+1, Revision: 7969:7982M
+R.litmus
+R+isync+po.litmus
+R+sync+po.litmus
+R+lwsync+po.litmus
+R+po+isync.litmus
+R+isyncs.litmus
+R+sync+isync.litmus
+R+lwsync+isync.litmus
+R+po+sync.litmus
+R+isync+sync.litmus
+R+syncs.litmus
+R+lwsync+sync.litmus
+R+po+lwsync.litmus
+R+isync+lwsync.litmus
+R+sync+lwsync.litmus
+R+lwsyncs.litmus

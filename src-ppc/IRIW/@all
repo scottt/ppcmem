@@ -1,0 +1,30 @@
+# diycross -vars -name IRIW Rfe allRR Fre Rfe allRR Fre
+# Revision: 6290:6335
+IRIW.litmus
+IRIW+addr+po.litmus
+IRIW+ctrl+po.litmus
+IRIW+ctrlisync+po.litmus
+IRIW+isync+po.litmus
+IRIW+sync+po.litmus
+IRIW+lwsync+po.litmus
+IRIW+addrs.litmus
+IRIW+ctrl+addr.litmus
+IRIW+ctrlisync+addr.litmus
+IRIW+isync+addr.litmus
+IRIW+sync+addr.litmus
+IRIW+lwsync+addr.litmus
+IRIW+ctrls.litmus
+IRIW+ctrlisync+ctrl.litmus
+IRIW+isync+ctrl.litmus
+IRIW+sync+ctrl.litmus
+IRIW+lwsync+ctrl.litmus
+IRIW+ctrlisyncs.litmus
+IRIW+isync+ctrlisync.litmus
+IRIW+sync+ctrlisync.litmus
+IRIW+lwsync+ctrlisync.litmus
+IRIW+isyncs.litmus
+IRIW+sync+isync.litmus
+IRIW+lwsync+isync.litmus
+IRIW+syncs.litmus
+IRIW+lwsync+sync.litmus
+IRIW+lwsyncs.litmus

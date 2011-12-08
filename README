@@ -1,0 +1,25 @@
+This is a tarball of our ppcmem tool for exploring the behavour 
+of programs with respect to the Power and ARM memory models described here:
+http://www.cl.cam.ac.uk/~pes20/ppcmem/help.html
+
+The tool can be used either from the web interface (accessible via
+that link) or on the command line, building an executable from this tarball.
+
+Note that, while some confidence in the models has been established by
+experiment and discussion (as described in the associated papers),
+they are not officially sanctioned by either IBM or ARM.
+
+
+To build
+--------
+
+make depend_text
+make text
+
+To run
+------
+
+./ppcmem -interactive true src-ppc/MP/MP+sync+addr.litmus 
+
+(or with any other tests from the library in src-ppc, available via the web page above, or hand-written)
+

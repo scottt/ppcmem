@@ -1,0 +1,22 @@
+PPC LB+rs (PPCAdirSix) "Register shadowing illustration"
+(* was ppc-adir6 *)
+{
+ P0:r4=x; P1:r4=x; P0:r5=y; P1:r5=y;
+ [x] = 0; [y] = 0;
+}
+   P0          |     P1           ;
+lwz r1,0,r4    | lwz  r3,0,r5     ;
+mr  r2, r1     | addi r3, r3, 1   ;
+li  r1, 1      | stw  r3,0,r4     ;
+stw r1,0,r5    |                  ;
+
+exists (P0:r1=1 /\ P0:r2=2 /\ P1:r3= 2 /\ [y]=1 /\ [x]=2)
+<<
+genprog generated/ppc-adir6-prog.tex
+essdump generated/ppc-adir6-ess.dot
+show 0
+>>
+<<
+show 0
+readfrom generated/ppc-adir6-rf.dot
+>>

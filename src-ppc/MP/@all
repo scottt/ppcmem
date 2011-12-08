@@ -1,0 +1,30 @@
+# diycross -name MP allWW Rfe allRR Fre -vars
+# Revision: 6290:6335
+MP.litmus
+MP+isync+po.litmus
+MP+sync+po.litmus
+MP+lwsync+po.litmus
+MP+po+addr.litmus
+MP+isync+addr.litmus
+MP+sync+addr.litmus
+MP+lwsync+addr.litmus
+MP+po+ctrl.litmus
+MP+isync+ctrl.litmus
+MP+sync+ctrl.litmus
+MP+lwsync+ctrl.litmus
+MP+po+ctrlisync.litmus
+MP+isync+ctrlisync.litmus
+MP+sync+ctrlisync.litmus
+MP+lwsync+ctrlisync.litmus
+MP+po+isync.litmus
+MP+isyncs.litmus
+MP+sync+isync.litmus
+MP+lwsync+isync.litmus
+MP+po+sync.litmus
+MP+isync+sync.litmus
+MP+syncs.litmus
+MP+lwsync+sync.litmus
+MP+po+lwsync.litmus
+MP+isync+lwsync.litmus
+MP+sync+lwsync.litmus
+MP+lwsyncs.litmus

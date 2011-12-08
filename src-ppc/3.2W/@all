@@ -1,0 +1,13 @@
+# diycross -noeieio -o 3.2W -name 3.2W PodWW,LwSyncdWW,SyncdWW Wse PodWW,LwSyncdWW,SyncdWW Wse PodWW,LwSyncdWW,SyncdWW Wse
+# Version 4.00+1, Revision: 8211
+3.2W.litmus
+3.2W+lwsync+po+po.litmus
+3.2W+sync+po+po.litmus
+3.2W+lwsync+lwsync+po.litmus
+3.2W+sync+lwsync+po.litmus
+3.2W+lwsync+sync+po.litmus
+3.2W+sync+sync+po.litmus
+3.2W+lwsyncs.litmus
+3.2W+sync+lwsync+lwsync.litmus
+3.2W+sync+sync+lwsync.litmus
+3.2W+syncs.litmus

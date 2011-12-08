@@ -1,0 +1,14 @@
+# diycross -name WRW+WR Rfe PodRW,DpAddrdW,LwSyncdRW,SyncdRW Wse PodWR,LwSyncdWR,SyncdWR Fre
+# Version 4.00+1, Revision: 8182
+WRW+WR.litmus
+WRW+WR+addr+po.litmus
+WRW+WR+lwsync+po.litmus
+WRW+WR+sync+po.litmus
+WRW+WR+po+lwsync.litmus
+WRW+WR+addr+lwsync.litmus
+WRW+WR+lwsyncs.litmus
+WRW+WR+sync+lwsync.litmus
+WRW+WR+po+sync.litmus
+WRW+WR+addr+sync.litmus
+WRW+WR+lwsync+sync.litmus
+WRW+WR+syncs.litmus

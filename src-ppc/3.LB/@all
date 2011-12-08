@@ -1,0 +1,26 @@
+# diycross -noeieio -o 3.LB -name 3.LB PodRW,DpAddrdW,LwSyncdRW,SyncdRW Rfe PodRW,DpAddrdW,LwSyncdRW,SyncdRW Rfe PodRW,DpAddrdW,LwSyncdRW,SyncdRW Rfe
+# Version 4.00+1, Revision: 8211
+3.LB.litmus
+3.LB+addr+po+po.litmus
+3.LB+lwsync+po+po.litmus
+3.LB+sync+po+po.litmus
+3.LB+addr+addr+po.litmus
+3.LB+lwsync+addr+po.litmus
+3.LB+sync+addr+po.litmus
+3.LB+addr+lwsync+po.litmus
+3.LB+lwsync+lwsync+po.litmus
+3.LB+sync+lwsync+po.litmus
+3.LB+addr+sync+po.litmus
+3.LB+lwsync+sync+po.litmus
+3.LB+sync+sync+po.litmus
+3.LB+addrs.litmus
+3.LB+lwsync+addr+addr.litmus
+3.LB+sync+addr+addr.litmus
+3.LB+lwsync+lwsync+addr.litmus
+3.LB+sync+lwsync+addr.litmus
+3.LB+lwsync+sync+addr.litmus
+3.LB+sync+sync+addr.litmus
+3.LB+lwsyncs.litmus
+3.LB+sync+lwsync+lwsync.litmus
+3.LB+sync+sync+lwsync.litmus
+3.LB+syncs.litmus

@@ -1,0 +1,15 @@
+# diycross -coherence_decreasing -o 2+2W -name 2+2W PodWW,ISyncdWW,LwSyncdWW,SyncdWW Wse PodWW,ISyncdWW,LwSyncdWW,SyncdWW Wse
+# Version 4.00+1, Revision: 8209M
+#links to older tests
+2+2W.litmus
+2+2W+lwsyncs.litmus
+2+2W+syncs.litmus
+#########
+2+2W+isync+po.litmus
+2+2W+lwsync+po.litmus
+2+2W+sync+po.litmus
+2+2W+isyncs.litmus
+2+2W+lwsync+isync.litmus
+2+2W+sync+isync.litmus
+2+2W+sync+lwsync.litmus
+
