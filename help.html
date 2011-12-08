@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+            "http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>PPCMEM/ARMMEM</TITLE>
+
+<META http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<META name="GENERATOR" content="hevea 1.10">
+<LINK rel="stylesheet" type="text/css" href="ppc.css">
+</HEAD>
+<BODY >
+<!--HEVEA command line is: /usr/bin/hevea -fix -O -o ppc.html index.tex -->
+<!--HACHA command line is: /usr/bin/hacha -tocbis ppc.html -->
+<TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">PPCMEM/ARMMEM</h1><h2 class="titlerest"> A
+        Tool for Exploring the POWER and ARM Memory Models</H2>
+
+</TABLE><P>
+
+<a href="index.html#PPC">PPCMEM</a> (also known
+as <a href="index.html#ARM">ARMMEM</a>) is a tool with a web interface for exploring our
+formal architectural model of the Power and ARM memory models, as
+described <a href="../ppc-supplemental">here</a> and in the paper:
+</P><UL CLASS="itemize"><LI CLASS="li-itemize">
+<A HREF="../ppc-supplemental/pldi105-sarkar.pdf">Understanding POWER Multiprocessors</A>.
+In <A HREF="http://pldi11.cs.utah.edu/">PLDI 2011</A>. Susmit Sarkar, Peter Sewell, Jade Alglave, Luc Maranget, Derek Williams.
+</LI></UL>
+<p>
+This work is associated with a broader project on
+<A HREF="http://www.cl.cam.ac.uk/users/pes20/weakmemory/index.html">Relaxed-Memory
+Concurrency</A>.</P>
+
+
+<P><B>Usage</B>
+
+To use the web version of the tool:
+<ul><class="itemize">
+<li> Click on the <a href="index.html#PPC">PPCMEM</a>
+  or <a href="index.html#ARM">ARMMEM</a> link</li>
+<li> Select a test to run from the menu.  The tests are divided into
+  families: for each of ARM and POWER, there are some hand-written
+  tests and several uniform families (MP, SB, WRC, IRIW etc.) with
+  different combinations of barriers and dependencies.  Most of these
+  are discussed in
+  the <A HREF="../ppc-supplemental/pldi105-sarkar.pdf">paper</a>
+  above, and there are experimental results and diagrams of the
+  relevant executions in
+  the supplementary material <a href="../arm-supplemental">here (for
+  ARM)</a> and <a href="../ppc-supplemental">here (for POWER)</a>.</li>
+<li> Click `Interactive' to explore the test interactively.  The
+  screen will show the state of the memory model abstract machine,
+  with the allowable transitions highlighted in green.  Click on any one of
+  those to follow that transition to its associated next state.  After
+  doing so, the parts of the state that have changed will be
+  highlighted in red.  </li>
+<li> Click on `Undo' to go back a transition, `Reset' to go back to
+  the start to choose a new test, or `Auto' to explore <em>all</em>
+  possible executions from this state and display their final values
+  (on some Javascript implementations, `Auto' will work only for
+  relatively small tests).</li>
+
+</ul>
+
+
+<P><B>Download</B>
+<ul>
+<li> <a href="ppcmem-tarball.tar.gz">source distribution</a></li>
+</ul>
+
+
+<P><B>Disclaimer</B>
+Note that, while some confidence in the models has been established by
+experiment and discussion (as described in the associated papers),
+they are not officially sanctioned by either IBM or ARM.
+
+
+<P><B>People</B>
+</P><UL CLASS="itemize">
+
+<LI CLASS="li-itemize"><A HREF="http://www.comlab.ox.ac.uk/people/jade.alglave/">Jade
+Alglave</A>, Oxford University and INRIA
+</LI>
+
+<LI CLASS="li-itemize"><A HREF="http://moscova.inria.fr/~maranget">Luc Maranget</A>, INRIA
+</LI>
+
+<li class="li-itemize"><a href="http://iitk.academia.edu/PankajPawan">Pankaj
+    Pawan</a>, IIT Kanpur and INRIA </li>
+
+<LI CLASS="li-itemize">
+<A HREF="http://www.cl.cam.ac.uk/users/ss726">Susmit Sarkar</A>,
+University of Cambridge
+</LI>
+
+<LI CLASS="li-itemize"><A HREF="http://www.cl.cam.ac.uk/users/pes20">Peter Sewell</A>, University
+of Cambridge
+</LI>
+
+
+<LI CLASS="li-itemize"><A HREF="../ppc-supplemental/derekwilliams.html">Derek Williams</A>, IBM Austin
+</LI>
+
+
+<LI CLASS="li-itemize"><A HREF="http://moscova.inria.fr/~zappa">Francesco
+  Zappa Nardelli</A>,
+  INRIA
+</LI>
+</ul>
+
+<!--FOOTER-->
+<HR SIZE=2>
+<p>The model code was built
+using <a href="http://www.cl.cam.ac.uk/users/so294/lem">Lem</a>, and
+<a href="http://ocsigen.org/js_of_ocaml/manual/">js_of_ocaml</a> was
+used to compile OCaml bytecode to Javascript.</p>
+</BODY>
+</HTML>
